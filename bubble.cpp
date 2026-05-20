@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -17,3 +18,24 @@ public:
         return nums;
     }
 };
+=======
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    vector<int> bubbleSort(vector<int>& nums) {
+        int n = nums.size();
+
+
+        for(int i=0;i<n;i++){
+            
+            for(int j = 0 ;j<n-i-1;j++){
+                if(nums[j] >  nums[j+1] ) swap(nums[j],nums[j+1]);
+            }
+        }
+
+        return nums;
+    }
+};
+>>>>>>> 406e60c (Insertion Sort done)
