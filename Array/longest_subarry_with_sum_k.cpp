@@ -32,3 +32,39 @@ public:
         return ans;
     }
 };
+
+
+
+// Second approach 
+
+class Solution{
+public:
+    int longestSubarray(vector<int> &nums, int k){
+        
+        int n = nums.size();
+
+        int right=0;
+        int left = 0;
+
+        long long sum = nums[0];
+
+        int ans = 0;
+
+        while(right < n){
+            while(left <= right && sum > k){
+                sum -= nums[left];
+                left++;
+            }
+
+            if(sum == k){
+                ans = max(ans,right-left+1);
+            }
+
+            right++;
+            if(right < n) sum += nums[right];
+        }
+
+
+        return ans;
+    }
+};
